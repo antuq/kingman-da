@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+@import './base.css';
+
+/* Overall application layout */
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f6f6f6;
+  color: #202938;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  flex-shrink: 0;
+  padding: 24px 16px;
+  color: #f4f4f4;
+  background-color: #202c40;
+}
+
+.sidebar h2 {
+  margin-bottom: 28px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px;
+  margin: 4px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background-color: #34445e;
+}
+
+/* Main workspace */
+.workspace {
+  flex: 1;
+  min-width: 0;
+  padding: 36px;
+}
+
+.workspace h1 {
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.workspace > p {
+  color: #687386;
+}
+
+/* Dashboard action grid */
+.home-actions {
+  margin-top: 28px;
+}
+
+.home-actions ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 760px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Action cards */
+.action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 170px;
+  padding: 24px;
+
+  text-align: left;
+  border: 1px solid #d9deea;
+  border-radius: 8px;
+  background-color: white;
+  color: #202938;
+  cursor: pointer;
+  font: inherit;
+
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.action-card:hover {
+  background-color: #e9eef8;
+  border-color: #bdc9df;
+}
+
+.action-card:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.action-card strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.action-card span:last-child {
+  color: #687386;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Icon containers */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+
+.create-icon {
+  background-color: #dceaff;
+  color: #2563eb;
+}
+
+.open-icon {
+  background-color: #d9fbe7;
+  color: #15803d;
+}
+
+.recent-icon {
+  background-color: #f0e3ff;
+  color: #7e22ce;
+}
+
+.settings-icon {
+  background-color: #ffead5;
+  color: #c2410c;
+}
+
+/* Smaller windows */
+@media (max-width: 700px) {
+  .sidebar {
+    width: 190px;
+    padding: 20px 12px;
+  }
+
+  .workspace {
+    padding: 24px;
+  }
+
+  .home-actions ul {
+    grid-template-columns: 1fr;
+  }
+}
